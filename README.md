@@ -1,4 +1,4 @@
-# flutter_bloc_basic_with_todo
+# flutter_bloc_basic_with_counter_app
 
 A new Flutter project.
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_basic_with_todo/modules/home/bloc/counter_bloc.dart';
+import 'package:flutter_bloc_basic_with_counter_app/modules/home/bloc/counter_bloc.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
