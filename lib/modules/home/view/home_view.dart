@@ -17,12 +17,25 @@ class MyHomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              BlocBuilder<CounterBloc, CounterState>(
+              BlocListener<CounterBloc, CounterState>(
+                listener: (context, state) {
+                  if (state is CounterIncrementState) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text("Successfully increased."),duration: Duration(seconds: 1),));
+                  }
+                  if (state is CounterDecrementState) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text("Successfully decreased."),duration: Duration(seconds: 1)));
+                  }
+                },
+                child: BlocBuilder<CounterBloc, CounterState>(
                 builder: (context, state) => Text(
                   'Counter value: ${state.counterValue}',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
+              ),
+    
               SizedBox(
                 height: 20,
               ),
